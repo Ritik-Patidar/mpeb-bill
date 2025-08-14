@@ -185,7 +185,7 @@ export default function BillCard({ billDetails }: { billDetails: any }) {
           <div className="overflow-x-auto">
             <h2 className="font-semibold mb-2">विगत माहों के खपत का ब्यौरा</h2>
             <table className="w-full border border-gray-300 text-sm">
-              <thead className="bg-gray-800">
+              <thead className="bg-accent">
                 <tr>
                   <th className="p-2">वाचन माह</th>
                   <th className="p-2">तिथि</th>
@@ -240,84 +240,84 @@ export default function BillCard({ billDetails }: { billDetails: any }) {
         <CardContent className="space-y-4">
           <div className="overflow-x-auto">
             <table className="w-full border border-gray-300 text-sm">
-              <thead className="bg-gray-800">
+              <thead className="bg-accent text-left">
                 <tr>
                   <th className="p-2">विवरण विवरण</th>
-                  <th className="p-2">राशि रु.में</th>
+                  <th className="p-2 text-right">राशि रु.में</th>
                 </tr>
               </thead>
               <tbody className="">
                 <tr>
                   <td className="p-2">ऊर्जा शुल्क</td>
-                  <td className="p-2">{billDetails?.ENCH}</td>
+                  <td className="p-2 text-right">{billDetails?.ENCH}</td>
                 </tr>
                 <tr>
                   <td className="p-2">ईंधन और विद्युत क्रय समायोजन अधिभार</td>
-                  <td className="p-2">{billDetails?.FCA_CH}</td>
+                  <td className="p-2 text-right">{billDetails?.FCA_CH}</td>
                 </tr>
                 <tr>
                   <td className="p-2">नियत प्रभाव</td>
-                  <td className="p-2">{billDetails?.FXCH}</td>
+                  <td className="p-2 text-right">{billDetails?.FXCH}</td>
                 </tr>
                 <tr>
                   <td className="p-2">विद्युत शुल्क</td>
-                  <td className="p-2">{billDetails?.DUTY}</td>
+                  <td className="p-2 text-right">{billDetails?.DUTY}</td>
                 </tr>
                 <tr>
                   <td className="p-2">सुरक्षा निधि कटौती</td>
-                  <td className="p-2">{billDetails?.SD_INST}</td>
+                  <td className="p- text-right">{billDetails?.SD_INST}</td>
                 </tr>
                 <tr>
                   <td className="p-2">अन्य शुल्क</td>
-                  <td className="p-2">{billDetails?.OCH}</td>
+                  <td className="p-2 text-right">{billDetails?.OCH}</td>
                 </tr>
                 <tr>
                   <td className="p-2">वर्तमान माह देयक</td>
-                  <td className="p-2">{billDetails?.MONTH_BILL_1}</td>
+                  <td className="p-2 text-right">{billDetails?.MONTH_BILL_1}</td>
                 </tr>
                 <tr>
                   <td className="p-2 font-semibold">
                     म.प्र. शासन सब्सिडी राशि
                   </td>
-                  <td className="p-2 font-semibold">{billDetails?.SUBSIDY_TOTAL}</td>
+                  <td className="p-2 text-right font-semibold">{billDetails?.SUBSIDY_TOTAL}</td>
                 </tr>
                 <tr>
                   <td className="p-2">सुरक्षा निधि पर ब्याज (-)</td>
-                  <td className="p-2">{billDetails?.SD_INT}</td>
+                  <td className="p-2 text-right">{billDetails?.SD_INT}</td>
                 </tr>
                 <tr>
                   <td className="p-2">समायोजन गणना राशि</td>
-                  <td className="p-2">{billDetails?.SD_INT}</td>
+                  <td className="p-2 text-right">{billDetails?.SD_INT}</td>
                 </tr>
                 <tr>
                   <td className="p-2">लॉक क्रेडिट/कर्मचारी छूट (-)</td>
-                  <td className="p-2">{billDetails?.LF_LOCK_REBATE}</td>
+                  <td className="p-2 text-right">{billDetails?.LF_LOCK_REBATE}</td>
                 </tr>
                 <tr>
                   <td className="p-2">गत माह विलंब शुल्क</td>
-                  <td className="p-2">{billDetails?.Prev_Pendng_AMNT}</td>
+                  <td className="p-2 text-right">{billDetails?.Prev_Pendng_AMNT}</td>
                 </tr>
                 <tr>
                   <td className="p-2">ऑनलाइन/अग्रिम प्रोत्साहन</td>
-                  <td className="p-2">{billDetails?.ONLN_PYMT_RBT}</td>
+                  <td className="p-2 text-right">{billDetails?.ONLN_PYMT_RBT}</td>
                 </tr>
                 <tr>
                   <td className="p-2 font-semibold">वर्तमान देयक राशि</td>
-                  <td className="p-2 font-semibold">{billDetails?.MONTH_BILL}</td>
+                  <td className="p-2 text-right font-semibold">{billDetails?.MONTH_BILL}</td>
                 </tr>
                 <tr>
                   <td className="p-2">पिछला बकाया</td>
-                  <td className="p-2">{billDetails?.Prev_Pendng_AMNT}</td>
+                  <td className="p-2 text-right">{billDetails?.Prev_Pendng_AMNT}</td>
                 </tr>
                 <tr>
                   <td className="p-2">रकम प्राप्त</td>
-                  <td className="p-2">{billDetails?.AMT_RCVD}</td>
+                  <td className="p-2 text-right">{billDetails?.AMT_RCVD}</td>
                 </tr>
                 <tr className="border border-gray-300">
                   <td className="p-2 font-semibold">
                     नियत तिथि तक कुल देयक राशि
                   </td>
-                  <td className="p-2 font-semibold">{billDetails?.NET_BILL_1}</td>
+                  <td className="p-2 text-right font-semibold">{billDetails?.NET_BILL_1}</td>
                 </tr>
               </tbody>
             </table>
