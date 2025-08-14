@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <div className="grid w-full max-w-sm items-center gap-3">
+      <div className="grid w-full max-w-sm items-center gap-3 mx-8">
         <Label htmlFor="ivrs">IVRS</Label>
         <div className="flex w-full max-w-sm items-center gap-2">
           <Input
