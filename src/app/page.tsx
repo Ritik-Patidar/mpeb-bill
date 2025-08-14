@@ -14,15 +14,20 @@ export default function Home() {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    const ivrsPattern = /^N\d{10}$/;
-    setIsValidIvrs(ivrsPattern.test(value));
+    setIsValidIvrs(true)
     setIvrs(value);
   };
 
   const handleFetchBill = () => {
-    if (!ivrs || !isValidIvrs || isLoading) {
+    if (isLoading) return;
+    const ivrsPattern = /^N\d{10}$/;
+    const isValid = ivrsPattern.test(ivrs);
+    
+    if (!isValid) {
+      setIsValidIvrs(false);
       return;
     }
+
     setIsLoading(true);
     router.push(`/bill/${ivrs}`);
   };
@@ -37,6 +42,7 @@ export default function Home() {
             type="text"
             placeholder="N1234567890"
             onChange={handleChange}
+            value={ivrs}
           />
           <Button
             disabled={!isValidIvrs}

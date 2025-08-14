@@ -1,17 +1,31 @@
-export default async function FetchBill({
+import { catchError } from "@/utils";
+import BillCard from "./BillCard";
+
+export default async function ElectricityBill({
   params,
 }: {
-  params: Promise<{ ivrs: string }>
+  params: Promise<{ ivrs: string }>;
 }) {
-  const { ivrs } = await params
+  const { ivrs } = await params;
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/bill?ivrs=${ivrs}`);
+  if (!ivrs) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-red-500">Invalid IVRS number</h1>
+      </div>
+    );
+  }
+
+  const [error, data] = await catchError(
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/bill?ivrs=${ivrs}`)
+  );
+  if (error || !data) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="text-red-500">Error fetching bill details</h1>
+      </div>
+    );
+  }
   const response = await data.json();
-  console.log("response from api/bill --------> ", response);
-
-  return (
-    <div>
-      <h1>{ivrs}</h1>
-    </div>
-  )
+  return <BillCard billDetails={response?.data || {}} />;
 }
