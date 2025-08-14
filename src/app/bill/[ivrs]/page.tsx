@@ -17,7 +17,7 @@ export default async function ElectricityBill({
   }
 
   const [error, data] = await catchError(
-    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/bill?ivrs=${ivrs}`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/bill?ivrs=${ivrs}`)
   );
   if (error || !data) {
     return (
