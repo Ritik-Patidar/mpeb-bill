@@ -6,7 +6,7 @@ Users can enter their **IVRS (customer) number** to view the latest bill details
 ---
 
 ## 🌐 Live Website
-**Visit here:** [https://your-website-url.com  ](https://mpeb.netlify.app/)
+**Visit here:** [https://mpeb.netlify.app/](https://mpeb.netlify.app/)
 
 ---
 
